@@ -21,14 +21,26 @@
             @else
                 <table class="table table-striped">
                     <thead>
-                        <th>Name</th>
+                        <th>City</th>
+                        <th>Place</th>
+                        <th>SSID</th>
+                        <th>Password</th>
                         <th class="text-right" width="200px">Action</th>
                     </thead>
                     <tbody>
                         @foreach($hotspots as $hotspot)
                             <tr>
                                 <td>
-                                    <a href="{!! route('hotspots.edit', [$hotspot->id]) !!}">{{ $hotspot->name }}</a>
+                                    <a href="{!! route('hotspots.show', [$hotspot->id]) !!}">{{ $hotspot->city }}</a>
+                                </td>
+                                <td>
+                                    <a href="{!! route('hotspots.show', [$hotspot->id]) !!}">{{ $hotspot->place }}</a>
+                                </td>
+                                <td>
+                                    <a href="{!! route('hotspots.show', [$hotspot->id]) !!}">{{ $hotspot->ssid }}</a>
+                                </td>
+                                <td>
+                                    <a href="{!! route('hotspots.show', [$hotspot->id]) !!}">{{ $hotspot->password }}</a>
                                 </td>
                                 <td class="text-right">
                                     <form method="post" action="{!! route('hotspots.destroy', [$hotspot->id]) !!}">

@@ -85,7 +85,7 @@ Route::group(['middleware' => ['auth', 'active']], function () {
     |--------------------------------------------------------------------------
     */
 
-    Route::resource('hotspots', 'HotspotsController', ['except' => ['show', 'index']]);
+    Route::resource('hotspots', 'HotspotsController', ['except' => ['index']]);
     Route::post('hotspots/search', [
         'as' => 'hotspots.search',
         'uses' => 'HotspotsController@search'
