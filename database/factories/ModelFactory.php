@@ -22,3 +22,53 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+/*
+|--------------------------------------------------------------------------
+| UserMeta Factory
+|--------------------------------------------------------------------------
+*/
+
+$factory->define(App\Models\UserMeta::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => 1,
+        'phone' => $faker->phoneNumber,
+        'marketing' => 1,
+        'terms_and_cond' => 1,
+    ];
+});
+
+$factory->define(App\Models\Role::class, function (Faker\Generator $faker) {
+    return [
+        'name' => 'member',
+        'label' => 'Member',
+    ];
+});
+
+/*
+|--------------------------------------------------------------------------
+| Team Factory
+|--------------------------------------------------------------------------
+*/
+
+$factory->define(App\Models\Team::class, function (Faker\Generator $faker) {
+    return [
+        'user_id' => 1,
+        'name' => $faker->name
+    ];
+});
+/*
+|--------------------------------------------------------------------------
+| Hotspot Factory
+|--------------------------------------------------------------------------
+*/
+
+$factory->define(App\Models\Hotspot::class, function (Faker\Generator $faker) {
+    return [
+        'id' => '1',
+		'city' => 'laravel',
+		'place' => 'laravel',
+		'ssid' => 'laravel',
+		'password' => 'laravel',
+    ];
+});
