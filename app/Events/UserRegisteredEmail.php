@@ -14,17 +14,15 @@ class UserRegisteredEmail
     use InteractsWithSockets, SerializesModels;
 
     public $user;
-    public $password;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($user, $password)
+    public function __construct($user)
     {
         $this->user = $user;
-        $this->password = $password;
     }
 
     /**

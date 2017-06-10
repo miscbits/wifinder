@@ -8,24 +8,6 @@ use Illuminate\Notifications\Messages\MailMessage;
 class NewAccountEmail extends Notification
 {
     /**
-     * The password
-     *
-     * @var string
-     */
-    public $password;
-
-    /**
-     * Create a notification instance.
-     *
-     * @param  string  $token
-     * @return void
-     */
-    public function __construct($password)
-    {
-        $this->password = $password;
-    }
-
-    /**
      * Get the notification's channels.
      *
      * @param  mixed  $notifiable
@@ -49,7 +31,6 @@ class NewAccountEmail extends Notification
         return (new MailMessage())
             ->line('You\'ve got a new account!')
             ->line('EM: '.$notifiable->email)
-            ->line('PW: '.$this->password)
             ->line('Click the link below to login')
             ->action('Login', url('login'));
     }
